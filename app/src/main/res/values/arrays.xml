@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="rainbow">
-        <item>#aaa</item>
-        <item>#111</item>
-        <item>#123</item>
-        <item>#234</item>
-        <item>#f02</item>
-        <item>#039</item>
+        <item>@color/reds</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/cyan</item>
+        <item>@color/blue</item>
+        <item>@color/purple</item>
     </integer-array>
 </resources>
