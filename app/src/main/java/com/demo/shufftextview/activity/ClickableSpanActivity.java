@@ -17,24 +17,31 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.shufftextview.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ClickableSpanActivity extends Activity {
 
     @Bind(R.id.tv_content)
     TextView mTvContent;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clickable_span);
         ButterKnife.bind(this);
-        String content = getString(R.string.url_span);
+        mTvTitle.setText(R.string.clickable_span);
+        String content = getString(R.string.text_content);
         SpannableStringBuilder ssb = new SpannableStringBuilder(content);
         SpanClickableSpan spanClickableSpan = new SpanClickableSpan(0xffFF4081, new ClickableSpanNoUnderline.OnClickListener<SpanClickableSpan>() {
             /**
@@ -59,7 +66,7 @@ public class ClickableSpanActivity extends Activity {
                 }
             }
         });
-        spanClickableSpan.setUrlString("https://github.com/coding404");
+        spanClickableSpan.setUrlString(getString(R.string.url_github_project));
         ssb.setSpan(spanClickableSpan, 0, 3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         mTvContent.setText(ssb);
 // 在单击链接时凡是有要执行的动作，都必须设置MovementMethod对象
@@ -67,6 +74,11 @@ public class ClickableSpanActivity extends Activity {
 // 设置点击后的颜色，这里涉及到ClickableSpan的点击背景
         mTvContent.setHighlightColor(0x00000000);
 
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 
     public static class ClickableSpanNoUnderline extends ClickableSpan {

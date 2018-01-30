@@ -6,12 +6,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.shufftextview.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class Method02Activity extends Activity {
 
@@ -19,12 +21,17 @@ public class Method02Activity extends Activity {
     TextView mTvContent01;
     @Bind(R.id.tv_content02)
     TextView mTvContent02;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_method02);
         ButterKnife.bind(this);
+        mTvTitle.setText(R.string.mothod_02);
         String html01 = getString(R.string.different_color_text);
         mTvContent01.setText(Html.fromHtml(html01));
         String html = getString(R.string.from_html_text);
@@ -33,6 +40,11 @@ public class Method02Activity extends Activity {
         mTvContent02.setMovementMethod(LinkMovementMethod.getInstance());
 /*ResouroceImageGetter用来处理TextView中的图片*/
         mTvContent02.setText(Html.fromHtml(html, new ResouroceImageGetter(this), null));
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 
     private static class ResouroceImageGetter implements Html.ImageGetter {

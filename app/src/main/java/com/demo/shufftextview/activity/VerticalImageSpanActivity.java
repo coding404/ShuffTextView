@@ -9,23 +9,31 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.shufftextview.R;
+import com.demo.shufftextview.customspan.VerticalImageSpan;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class VerticalImageSpanActivity extends Activity {
 
     @Bind(R.id.tv_content)
     TextView mTvContent;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vertical_image_span);
         ButterKnife.bind(this);
+        mTvTitle.setText(R.string.vertical_image_span);
         String content = getString(R.string.long_span);
         SpannableStringBuilder ssb = new SpannableStringBuilder(content);
         Drawable drawable = getDrawable(R.mipmap.ic_launcher);
@@ -33,46 +41,8 @@ public class VerticalImageSpanActivity extends Activity {
         mTvContent.setText(ssb);
     }
 
-    public class VerticalImageSpan extends ImageSpan {
-
-        private Drawable drawable;
-
-        public VerticalImageSpan(Drawable drawable) {
-            super(drawable);
-            this.drawable = drawable;
-        }
-
-        @Override
-        public int getSize(Paint paint, CharSequence text, int start, int end, Paint.FontMetricsInt fontMetricsInt) {
-            Drawable drawable = getDrawable();
-            if (drawable == null) {
-                drawable = this.drawable;
-            }
-            Rect rect = drawable.getBounds();
-            if (fontMetricsInt != null) {
-                Paint.FontMetricsInt fmPaint = paint.getFontMetricsInt();
-                int fontHeight = fmPaint.bottom - fmPaint.top;
-                int drHeight = rect.bottom - rect.top;
-
-                int top = drHeight / 2 - fontHeight / 4;
-                int bottom = drHeight / 2 + fontHeight / 4;
-
-                fontMetricsInt.ascent = -bottom;
-                fontMetricsInt.top = -bottom;
-                fontMetricsInt.bottom = top;
-                fontMetricsInt.descent = top;
-            }
-            return rect.right;
-        }
-
-        @Override
-        public void draw(Canvas canvas, CharSequence text, int start, int end, float x, int top, int y, int bottom, Paint paint) {
-            Drawable drawable = getDrawable();
-            canvas.save();
-            int transY = ((bottom - top) - drawable.getBounds().bottom) / 2 + top;
-            canvas.translate(x, transY);
-            drawable.draw(canvas);
-            canvas.restore();
-        }
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

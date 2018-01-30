@@ -1,41 +1,43 @@
 package com.demo.shufftextview.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.TextAppearanceSpan;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.shufftextview.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AppearanceSpanActivity extends Activity {
 
     @Bind(R.id.tv_content)
     TextView mTvContent;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
 
-    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appearance_span);
         ButterKnife.bind(this);
-        // TODO: 2017/11/30 先看看再做
-      /*  String content = getString(R.string.url_span);
-        SpannableStringBuilder ssb = new SpannableStringBuilder(content);
-        ColorStateList colorStateList = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            colorStateList = this.getColorStateList(R.color.selector_apperarance_span);
-        } else {
-            try {
-                colorStateList = ColorStateList.createFromXml(this.getResources(), this.getResources().getXml(R.color.selector_apperarance_span));
-            } catch (XmlPullParserException | IOException e) {
-                e.printStackTrace();
-            }
-        }
-        ssb.setSpan(new TextAppearanceSpan("serif", Typeface.BOLD_ITALIC, this.getResources().getDimensionPixelSize(R.dimen.text_appearance_span),
-                colorStateList, colorStateList), 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-        mTvContent.setText(ssb);*/
+        mTvTitle.setText(R.string.text_appeance_span);
+        String content = getString(R.string.text_content);
+        SpannableString styledText = new SpannableString(content);
+        styledText.setSpan(new TextAppearanceSpan(this, R.style.style_black), 0, 3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        styledText.setSpan(new TextAppearanceSpan(this, R.style.style_red), 3, styledText.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        mTvContent.setText(styledText);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

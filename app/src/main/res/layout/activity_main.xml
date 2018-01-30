@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="ShuffTextView"
+        android:textColor="#fff"
+        android:textSize="18sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,399 +27,167 @@
 
             <TextView
                 android:id="@+id/tv_method01"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="在TextView的XML布局文件中添加Compound Drawable属性"/>
+                style="@style/TextViewStyle"
+                android:text="@string/mothod_01" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
 
             <TextView
                 android:id="@+id/tv_method02"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text=" 在对TextView设置字符串时，设置Html类型的字符串"/>
+                style="@style/TextViewStyle"
+                android:text="@string/mothod_02" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
-
-            <TextView
-                android:id="@+id/tv_method03"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="利用CharacterStyle进行修饰，从而展现出丰富多彩的内容"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
 
             <TextView
                 android:id="@+id/tv_url_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="URLSpan"/>
+                style="@style/TextViewStyle"
+                android:text="@string/url_span" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
 
             <TextView
                 android:id="@+id/tv_underline_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="UnderlineSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/under_line_span" />
 
             <TextView
                 android:id="@+id/tv_typeface_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="TypefaceSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/type_face_span" />
 
             <TextView
                 android:id="@+id/tv_text_appearance_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="TextAppeanceSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/text_appeance_span" />
 
             <TextView
                 android:id="@+id/tv_tab_stop_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="TabStopSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/tab_stop_span" />
 
             <TextView
                 android:id="@+id/tv_superscript_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="SuperscriptSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/super_script_span" />
 
             <TextView
                 android:id="@+id/tv_subscript_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="SubscriptSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/sub_script_span" />
 
             <TextView
                 android:id="@+id/tv_strikethrough_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="StrikethroughSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/strike_through_span" />
 
             <TextView
                 android:id="@+id/tv_scalex_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="ScaleXSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/scale_x_span" />
 
             <TextView
                 android:id="@+id/tv_style_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="StyleSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/style_span" />
 
             <TextView
                 android:id="@+id/tv_relativesize_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="RelativeSizeSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/relative_size_span" />
 
             <TextView
                 android:id="@+id/tv_quote_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="QuoteSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/quote_span" />
 
             <TextView
                 android:id="@+id/tv_maskfilter_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="MaskFilterSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/mask_filter_span" />
 
             <TextView
                 android:id="@+id/tv_leadmargin_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="LeadingMarginSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/leading_margin_span" />
 
             <TextView
                 android:id="@+id/tv_image_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="ScaleXSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/image_span" />
 
             <TextView
                 android:id="@+id/tv_iconmargin_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="IconMarginSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/icon_margin_span" />
 
             <TextView
                 android:id="@+id/tv_foregroundcolor_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="ForegroundColorSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/foreground_color_span" />
 
             <TextView
                 android:id="@+id/tv_drawablemargin_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="DrawableMarginSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/drawable_margin_span" />
 
             <TextView
                 android:id="@+id/tv_bullet_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="ScaleXSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/bullet_span" />
 
             <TextView
                 android:id="@+id/tv_bgcolor_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="BackgroundColorSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/background_color_span" />
 
             <TextView
                 android:id="@+id/tv_alignment_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="AlignmentSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/alignment_span" />
 
             <TextView
                 android:id="@+id/tv_absolutesize_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="AbsoluteSizeSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/absolute_size_span" />
 
             <TextView
                 android:id="@+id/tv_clickable_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="ClickableSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/clickable_span" />
 
             <TextView
                 android:id="@+id/tv_frame_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="FrameSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/frame_span" />
 
             <TextView
                 android:id="@+id/tv_vertical_image_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="VerticalImageSpan"/>
+                style="@style/TextViewStyle"
+                android:text="@string/vertical_image_span" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
 
             <TextView
                 android:id="@+id/tv_animate_forecolor_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="AnimateForegroundColorSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/animate_foreground_color_span" />
 
             <TextView
                 android:id="@+id/tv_rainbow_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="RainbowSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/rainbow_span" />
 
             <TextView
                 android:id="@+id/tv_animate_rain_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="AnimatedRainbowSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/animated_rainbow_span" />
 
             <TextView
                 android:id="@+id/tv_firework_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="FireworksSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/fireworks_span" />
 
             <TextView
                 android:id="@+id/tv_type_writer_span"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:text="TypeWriterSpan"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#aaa"/>
+                style="@style/TextViewStyle"
+                android:text="@string/typewriter_span" />
         </LinearLayout>
     </ScrollView>
 

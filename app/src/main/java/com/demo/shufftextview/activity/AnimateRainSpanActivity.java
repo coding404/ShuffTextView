@@ -9,6 +9,7 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.format.DateUtils;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.shufftextview.R;
@@ -16,17 +17,23 @@ import com.demo.shufftextview.customspan.AnimatedColorSpan;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AnimateRainSpanActivity extends Activity {
 
     @Bind(R.id.tv_content)
     TextView mTvContent;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animate_rain_span);
         ButterKnife.bind(this);
+        mTvTitle.setText(R.string.animated_rainbow_span);
         AnimatedColorSpan span = new AnimatedColorSpan(this);
         String content = getString(R.string.long_span);
         SpannableStringBuilder ssb = new SpannableStringBuilder(content);
@@ -50,4 +57,8 @@ public class AnimateRainSpanActivity extends Activity {
         objectAnimator.start();
     }
 
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
+    }
 }

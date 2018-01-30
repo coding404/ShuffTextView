@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.shufftextview.R;
@@ -15,21 +16,27 @@ import com.demo.shufftextview.customspan.MutableForegroundColorSpan;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class FireworkSpanActivity extends Activity {
 
     @Bind(R.id.tv_content)
     TextView mTvContent;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firework_span);
         ButterKnife.bind(this);
+        mTvTitle.setText(R.string.fireworks_span);
         final FireWorkGroup group = new FireWorkGroup();
         String content = getString(R.string.long_span);
         final SpannableString spannableString = new SpannableString(content);
-        for(int index = 0 ; index < content.length() ; index++) {
+        for (int index = 0; index < content.length(); index++) {
             MutableForegroundColorSpan span = new MutableForegroundColorSpan(0, Color.BLACK);
             group.addSpan(span);
             spannableString.setSpan(span, index, index + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -46,5 +53,10 @@ public class FireworkSpanActivity extends Activity {
         objectAnimator.setDuration(2000);
         objectAnimator.start();
 
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

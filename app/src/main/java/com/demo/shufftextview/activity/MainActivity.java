@@ -19,8 +19,6 @@ public class MainActivity extends Activity {
     TextView mTvMethod01;
     @Bind(R.id.tv_method02)
     TextView mTvMethod02;
-    @Bind(R.id.tv_method03)
-    TextView mTvMethod03;
     @Bind(R.id.tv_url_span)
     TextView mTvUrlSpan;
     @Bind(R.id.tv_underline_span)
@@ -90,27 +88,7 @@ public class MainActivity extends Activity {
 
     }
 
-   /* @OnClick({R.id.tv_frame_span, R.id.tv_vertical_image_span, R.id.tv_animate_forecolor_span, R.id.tv_rainbow_span, R.id.tv_animate_rain_span, R.id.tv_firework_span, R.id.tv_type_writer_span})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.tv_frame_span:
-                break;
-            case R.id.tv_vertical_image_span:
-                break;
-            case R.id.tv_animate_forecolor_span:
-                break;
-            case R.id.tv_rainbow_span:
-                break;
-            case R.id.tv_animate_rain_span:
-                break;
-            case R.id.tv_firework_span:
-                break;
-            case R.id.tv_type_writer_span:
-                break;
-        }
-    }*/
-
-    @OnClick({R.id.tv_method01, R.id.tv_method02, R.id.tv_method03, R.id.tv_url_span, R.id.tv_underline_span,
+    @OnClick({R.id.tv_method01, R.id.tv_method02, R.id.tv_url_span, R.id.tv_underline_span,
             R.id.tv_typeface_span, R.id.tv_text_appearance_span, R.id.tv_tab_stop_span, R.id.tv_superscript_span,
             R.id.tv_subscript_span, R.id.tv_strikethrough_span, R.id.tv_scalex_span, R.id.tv_style_span, R.id.tv_relativesize_span,
             R.id.tv_quote_span, R.id.tv_maskfilter_span, R.id.tv_leadmargin_span, R.id.tv_image_span, R.id.tv_iconmargin_span,
@@ -126,10 +104,6 @@ public class MainActivity extends Activity {
             case R.id.tv_method02:
                 Intent intent02 = new Intent(this, Method02Activity.class);
                 startActivity(intent02);
-                break;
-            case R.id.tv_method03:
-                Intent intent03 = new Intent(this, Method03Activity.class);
-                startActivity(intent03);
                 break;
             case R.id.tv_url_span:
                 Intent intent04 = new Intent(this, UrlSpanActivity.class);
