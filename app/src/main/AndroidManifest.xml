@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.demo.shufftextview">
+    package="com.demo.shufftextview">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -11,79 +13,46 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Method01Activity">
-        </activity>
-        <activity android:name=".activity.Method02Activity">
-        </activity>
-        <activity android:name=".activity.Method03Activity">
-        </activity>
-        <activity android:name=".activity.UrlSpanActivity">
-        </activity>
-        <activity android:name=".activity.UnderLineSpanActivity">
-        </activity>
-        <activity android:name=".activity.TypeFaceSpanActivity">
-        </activity>
-        <activity android:name=".activity.AppearanceSpanActivity">
-        </activity>
-        <activity android:name=".activity.TabStopSpanActivity">
-        </activity>
-        <activity android:name=".activity.SuperScriptSpanActivity">
-        </activity>
-        <activity android:name=".activity.SubScriptSpanActivity">
-        </activity>
-        <activity android:name=".activity.StrikethoughSpanActivity">
-        </activity>
-        <activity android:name=".activity.ScaleXSpanActivity">
-        </activity>
-        <activity android:name=".activity.StyleSpanActivity">
-        </activity>
-        <activity android:name=".activity.RelativeSizeSpanActivity">
-        </activity>
-        <activity android:name=".activity.QuoteSpanActivity">
-        </activity>
+        <activity android:name=".activity.Method01Activity"></activity>
+        <activity android:name=".activity.Method02Activity"></activity>
+        <activity android:name=".activity.UrlSpanActivity"></activity>
+        <activity android:name=".activity.UnderLineSpanActivity"></activity>
+        <activity android:name=".activity.TypeFaceSpanActivity"></activity>
+        <activity android:name=".activity.AppearanceSpanActivity"></activity>
+        <activity android:name=".activity.TabStopSpanActivity"></activity>
+        <activity android:name=".activity.SuperScriptSpanActivity"></activity>
+        <activity android:name=".activity.SubScriptSpanActivity"></activity>
+        <activity android:name=".activity.StrikethoughSpanActivity"></activity>
+        <activity android:name=".activity.ScaleXSpanActivity"></activity>
+        <activity android:name=".activity.StyleSpanActivity"></activity>
+        <activity android:name=".activity.RelativeSizeSpanActivity"></activity>
+        <activity android:name=".activity.QuoteSpanActivity"></activity>
         <activity
             android:name=".activity.MaskFilterSpanActivity"
-            android:hardwareAccelerated="false">
-        </activity>
-        <activity android:name=".activity.LeadingMarginSpanActivity">
-        </activity>
-        <activity android:name=".activity.ImageSpanActivity">
-        </activity>
-        <activity android:name=".activity.IconMarginSpanActivity">
-        </activity>
-        <activity android:name=".activity.ForegroundColorSpanActivity">
-        </activity>
-        <activity android:name=".activity.DrawableMarginSpanActivity">
-        </activity>
-        <activity android:name=".activity.BulletSpanActivity">
-        </activity>
-        <activity android:name=".activity.BackgroundColorSpanActivity">
-        </activity>
-        <activity android:name=".activity.AlignmentSpanActivity">
-        </activity>
-        <activity android:name=".activity.AbsoluteSizeSpanActivity">
-        </activity>
-        <activity android:name=".activity.ClickableSpanActivity">
-        </activity>
-        <activity android:name=".activity.FrameSpanActivity">
-        </activity>
-        <activity android:name=".activity.VerticalImageSpanActivity">
-        </activity>
-        <activity android:name=".activity.AnimateForeColorSpanActivity">
-        </activity>
-        <activity android:name=".activity.RainbowSpanActivity">
-        </activity>
-        <activity android:name=".activity.AnimateRainSpanActivity">
-        </activity>
-        <activity android:name=".activity.FireworkSpanActivity">
-        </activity>
-        <activity android:name=".activity.TypeWriterSpanActivity">
-        </activity>
+            android:hardwareAccelerated="false"></activity>
+        <activity android:name=".activity.LeadingMarginSpanActivity"></activity>
+        <activity android:name=".activity.ImageSpanActivity"></activity>
+        <activity android:name=".activity.IconMarginSpanActivity"></activity>
+        <activity android:name=".activity.ForegroundColorSpanActivity"></activity>
+        <activity android:name=".activity.DrawableMarginSpanActivity"></activity>
+        <activity android:name=".activity.BulletSpanActivity"></activity>
+        <activity android:name=".activity.BackgroundColorSpanActivity"></activity>
+        <activity android:name=".activity.AlignmentSpanActivity"></activity>
+        <activity android:name=".activity.AbsoluteSizeSpanActivity"></activity>
+        <activity android:name=".activity.ClickableSpanActivity"></activity>
+        <activity android:name=".activity.FrameSpanActivity"></activity>
+        <activity android:name=".activity.VerticalImageSpanActivity"></activity>
+        <activity android:name=".activity.AnimateForeColorSpanActivity"></activity>
+        <activity android:name=".activity.RainbowSpanActivity"></activity>
+        <activity android:name=".activity.AnimateRainSpanActivity"></activity>
+        <activity android:name=".activity.FireworkSpanActivity"></activity>
+        <activity android:name=".activity.TypeWriterSpanActivity"></activity>
+        <activity android:name=".activity.AboutMeActivity"></activity>
     </application>
 
 </manifest>

@@ -79,6 +79,8 @@ public class MainActivity extends Activity {
     TextView mTvFireworkSpan;
     @Bind(R.id.tv_type_writer_span)
     TextView mTvTypeWriterSpan;
+    @Bind(R.id.tv_about_me)
+    TextView mTvAboutMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +96,7 @@ public class MainActivity extends Activity {
             R.id.tv_quote_span, R.id.tv_maskfilter_span, R.id.tv_leadmargin_span, R.id.tv_image_span, R.id.tv_iconmargin_span,
             R.id.tv_foregroundcolor_span, R.id.tv_drawablemargin_span, R.id.tv_bullet_span, R.id.tv_bgcolor_span,
             R.id.tv_alignment_span, R.id.tv_absolutesize_span, R.id.tv_clickable_span, R.id.tv_frame_span, R.id.tv_vertical_image_span,
-            R.id.tv_animate_forecolor_span, R.id.tv_rainbow_span, R.id.tv_animate_rain_span, R.id.tv_firework_span, R.id.tv_type_writer_span})
+            R.id.tv_animate_forecolor_span, R.id.tv_rainbow_span, R.id.tv_animate_rain_span, R.id.tv_firework_span, R.id.tv_type_writer_span, R.id.tv_about_me})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_method01:
@@ -224,6 +226,10 @@ public class MainActivity extends Activity {
             case R.id.tv_type_writer_span:
                 Intent intent33 = new Intent(this, TypeWriterSpanActivity.class);
                 startActivity(intent33);
+                break;
+            case R.id.tv_about_me:
+                Intent intent = new Intent(this, AboutMeActivity.class);
+                startActivity(intent);
                 break;
         }
     }
