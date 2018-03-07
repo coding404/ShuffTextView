@@ -29,6 +29,8 @@ public class TypeWriterSpanActivity extends Activity {
     @Bind(R.id.iv_back)
     ImageView mIvBack;
     private AccelerateDecelerateInterpolator mSmoothInterpolator;
+    private SpannableString spannableString;
+    private TypeWriterSpanGroup group;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,8 @@ public class TypeWriterSpanActivity extends Activity {
         mTvTitle.setText(R.string.typewriter_span);
         mSmoothInterpolator = new AccelerateDecelerateInterpolator();
         String content = getString(R.string.long_span);
-        final TypeWriterSpanGroup group = new TypeWriterSpanGroup(0);
-        final SpannableString spannableString = new SpannableString(content);
+        group = new TypeWriterSpanGroup(0);
+        spannableString = new SpannableString(content);
         for (int index = 0; index < content.length(); index++) {
             MutableForegroundColorSpan span = new MutableForegroundColorSpan(0, Color.BLACK);
             group.addSpan(span);
@@ -58,18 +60,18 @@ public class TypeWriterSpanActivity extends Activity {
         objectAnimator.start();
     }
 
-    private final Property<TypeWriterSpanGroup, Float> TYPE_WRITER_GROUP_ALPHA_PROPERTY =new Property<TypeWriterSpanGroup, Float>(Float.class, "TYPE_WRITER_GROUP_ALPHA_PROPERTY") {
+    private final Property<TypeWriterSpanGroup, Float> TYPE_WRITER_GROUP_ALPHA_PROPERTY = new Property<TypeWriterSpanGroup, Float>(Float.class, "TYPE_WRITER_GROUP_ALPHA_PROPERTY") {
 
-                @Override
-                public void set(TypeWriterSpanGroup spanGroup, Float value) {
-                    spanGroup.setAlpha(value);
-                }
+        @Override
+        public void set(TypeWriterSpanGroup spanGroup, Float value) {
+            spanGroup.setAlpha(value);
+        }
 
-                @Override
-                public Float get(TypeWriterSpanGroup spanGroup) {
-                    return spanGroup.getAlpha();
-                }
-            };
+        @Override
+        public Float get(TypeWriterSpanGroup spanGroup) {
+            return spanGroup.getAlpha();
+        }
+    };
 
     @OnClick(R.id.iv_back)
     public void onClick() {

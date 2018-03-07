@@ -27,27 +27,30 @@ public class FireworkSpanActivity extends Activity {
     @Bind(R.id.iv_back)
     ImageView mIvBack;
 
+    private FireWorkGroup mGroup;
+    private SpannableString mSpannableString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firework_span);
         ButterKnife.bind(this);
         mTvTitle.setText(R.string.fireworks_span);
-        final FireWorkGroup group = new FireWorkGroup();
+        mGroup = new FireWorkGroup();
         String content = getString(R.string.long_span);
-        final SpannableString spannableString = new SpannableString(content);
+        mSpannableString = new SpannableString(content);
         for (int index = 0; index < content.length(); index++) {
             MutableForegroundColorSpan span = new MutableForegroundColorSpan(0, Color.BLACK);
-            group.addSpan(span);
-            spannableString.setSpan(span, index, index + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            mGroup.addSpan(span);
+            mSpannableString.setSpan(span, index, index + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
-        group.init();
-        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(group, FireWorkGroup.FIREWORKS_GROUP_PROGRESS_PROPERTY, 0.0f, 1.0f);
+        mGroup.init();
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mGroup, FireWorkGroup.FIREWORKS_GROUP_PROGRESS_PROPERTY, 0.0f, 1.0f);
         objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 //refresh
-                mTvContent.setText(spannableString);
+                mTvContent.setText(mSpannableString);
             }
         });
         objectAnimator.setDuration(2000);
